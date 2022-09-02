@@ -6,10 +6,6 @@ September 2022.
 import logging
 import os
 import sys
-import tempfile
-
-import numpy
-import pygeoprocessing
 
 sys.path.append(os.getcwd())
 
