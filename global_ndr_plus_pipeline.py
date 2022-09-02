@@ -793,11 +793,17 @@ def main():
         ecoshard_path = ecoshard_path_map[ecoshard_id_to_scrub]
 
         scrub_path = os.path.join(SCRUB_DIR, os.path.basename(ecoshard_path))
+        raster_info = pygeoprocessing.get_raster_info(ecoshard_path)
+        # Use the existing nodata value if it's available.
+        if raster_info['nodata'][0] is None:
+            nodata = float(numpy.finfo(numpy.float32).min)
+        else:
+            nodata = raster_info['nodata'][0]
         task_graph.add_task(
             func=scrub_raster,
             args=(ecoshard_path, scrub_path),
             kwargs={
-                'target_nodata': float(numpy.finfo(numpy.float32).min),
+                'target_nodata': nodata
             },
             target_path_list=[scrub_path],
             task_name=f'scrub {ecoshard_path}')
