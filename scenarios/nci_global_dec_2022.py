@@ -22,7 +22,7 @@ ECOSHARD_PREFIX = 'https://storage.googleapis.com/'
 SHERLOCK_SCRATCH = os.environ['SCRATCH']
 ECOSHARDS = {
     'nci-ndr-biophysical_table_forestry_grazing': f'{SHERLOCK_SCRATCH}/nci-ecoshards/nci-NDR-biophysical_table_forestry_grazing_md5_fbd7364c71c6fe45b45d1db428f05600.csv',
-    'worldclim_2015': f'{ECOSHARD_PREFIX}ipbes-ndr-ecoshard-data/worldclim_2015_md5_16356b3770460a390de7e761a27dbfa1.tif',
+    'worldclim_2015': f'{SHERLOCK_SCRATCH}/nci-ecoshards/worldclim_2015_md5_16356b3770460a390de7e761a27dbfa1.tif',
     'baseline_lulc': f'{SHERLOCK_SCRATCH}/nci-ecoshards/modifiedESA_2022_06_03_md5_7dc8402ad44251e8021f4a72559e5f32.tif',
     'baseline_fertilizer': f'{SHERLOCK_SCRATCH}/nci-ecoshards/current_n_app_md5_a7e226b3418504591095a704c2409f16.tif',
 }
