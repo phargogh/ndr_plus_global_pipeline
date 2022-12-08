@@ -32,14 +32,6 @@ ECOSHARDS = {
 # TODO: fix the n application pipeline to not produce nans and others that must
 # be scrubbed.
 SCRUB_IDS = {
-    'current_bmps_n_app',
-    'current_lulc_masked_n_app',
-    'extensification_current_practices_bmps_n_app',
-    'extensification_current_practices_n_app',
-    'intensification_bmps_n_app',
-    'intensification_expansion_bmps_n_app',
-    'intensification_expansion_n_app',
-    'intensification_n_app',
     'baseline_fertilizer',
 }
 
