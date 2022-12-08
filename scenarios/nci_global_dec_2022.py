@@ -43,14 +43,11 @@ SCRUB_IDS = {
     'baseline_fertilizer',
 }
 
-with open(os.environ['NCI_NDR_LULC_JSON']) as lulc_scenarios_json:
+with open(os.environ['NCI_SCENARIO_LULC_N_APP_JSON']) as lulc_scenarios_json:
     ECOSHARDS.update(json.load(lulc_scenarios_json))
 
-with open(os.environ['NCI_NDR_N_APP_JSON']) as n_app_json:
-    ECOSHARDS.update(json.load(n_app_json))
-
 SCENARIOS = {
-    'current_bmps': {
+    'current_bmp': {
         'lulc_id': 'current_bmps_lulc',
         'precip_id': 'worldclim_2015',
         'fertilizer_id': 'current_bmps_n_app',
@@ -62,7 +59,7 @@ SCENARIOS = {
         'fertilizer_id': 'current_lulc_masked_n_app',
         'biophysical_table_id': 'nci-ndr-biophysical_table_forestry_grazing',
     },
-    'extensification_current_practices_bmps': {
+    'extensification_current_practices_bmp': {
         'lulc_id': 'extensification_current_practices_bmps_lulc',
         'precip_id': 'worldclim_2015',
         'fertilizer_id': 'extensification_current_practices_bmps_n_app',
@@ -74,13 +71,13 @@ SCENARIOS = {
         'fertilizer_id': 'extensification_current_practices_n_app',
         'biophysical_table_id': 'nci-ndr-biophysical_table_forestry_grazing',
     },
-    'intensification_bmps': {
+    'intensification_bmp': {
         'lulc_id': 'intensification_bmps_lulc',
         'precip_id': 'worldclim_2015',
         'fertilizer_id': 'intensification_bmps_n_app',
         'biophysical_table_id': 'nci-ndr-biophysical_table_forestry_grazing',
     },
-    'intensification_expansion_bmps': {
+    'intensification_expansion_bmp': {
         'lulc_id': 'intensification_expansion_bmps_lulc',
         'precip_id': 'worldclim_2015',
         'fertilizer_id': 'intensification_expansion_bmps_n_app',
