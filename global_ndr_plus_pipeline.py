@@ -726,6 +726,8 @@ def main():
     if not os.path.exists(WORK_STATUS_DATABASE_PATH):
         _create_work_table_schema(WORK_STATUS_DATABASE_PATH)
 
+    LOGGER.debug(f"Current state of ecoshards: {ECOSHARDS}")
+
     task_graph = taskgraph.TaskGraph(
         WORKSPACE_DIR, args.n_workers)
     os.makedirs(ECOSHARD_DIR, exist_ok=True)
