@@ -25,7 +25,7 @@ from inspring.ndr_plus.ndr_plus import ndr_plus
 from osgeo import gdal
 from osgeo import osr
 
-gdal.SetCacheMax(2**27)
+gdal.SetCacheMax(1024)  # 1024 MB
 logging.getLogger('taskgraph').setLevel(logging.INFO)
 
 # Using an ENV-defined workspace means we can run multiple individual scenarios
