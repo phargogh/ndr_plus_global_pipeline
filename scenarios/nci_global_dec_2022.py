@@ -38,8 +38,13 @@ SCRUB_IDS = {
     'baseline_fertilizer',
 }
 
-with open(os.environ['NCI_SCENARIO_LULC_N_APP_JSON']) as lulc_scenarios_json:
-    ECOSHARDS.update(json.load(lulc_scenarios_json))
+try:
+    with open(os.environ['NCI_SCENARIO_LULC_N_APP_JSON']) as lulc_scenarios_json:
+        ECOSHARDS.update(json.load(lulc_scenarios_json))
+except KeyError:
+    # Not necessarily an issue; we might be just listing out the scenarios in
+    # order to define the jobs to run.
+    pass
 
 SCENARIOS = {
     'current_bmp': {
