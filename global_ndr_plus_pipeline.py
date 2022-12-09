@@ -728,8 +728,9 @@ def main():
         _create_work_table_schema(WORK_STATUS_DATABASE_PATH)
 
     ecoshards_used_in_scenarios = set(ALWAYS_FETCH_ECOSHARD_KEYS)
-    for scenario_ecoshard_keys in SCENARIOS.values():
-        ecoshards_used_in_scenarios.update(set(scenario_ecoshard_keys))
+    for scenario_ecoshard_dict in SCENARIOS.values():
+        ecoshards_used_in_scenarios.update(
+            set(scenario_ecoshard_dict.keys()))
 
     task_graph = taskgraph.TaskGraph(
         WORKSPACE_DIR, args.n_workers)
