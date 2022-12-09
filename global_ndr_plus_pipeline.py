@@ -81,6 +81,7 @@ ECOSHARDS = {
     DEM_ID: f'{ECOSHARD_PREFIX}ipbes-ndr-ecoshard-data/global_dem_3s_blake2b_0532bf0a1bedbe5a98d1dc449a33ef0c.zip',
     WATERSHED_ID: f'{ECOSHARD_PREFIX}ipbes-ndr-ecoshard-data/watersheds_globe_HydroSHEDS_15arcseconds_blake2b_14ac9c77d2076d51b0258fd94d9378d4.zip',
 }
+ALWAYS_FETCH_ECOSHARD_KEYS = set(ECOSHARDS.keys())
 # these are defined from scenario modules
 BIOPHYSICAL_TABLE_IDS = {}
 SCENARIOS = {}
@@ -726,6 +727,10 @@ def main():
     if not os.path.exists(WORK_STATUS_DATABASE_PATH):
         _create_work_table_schema(WORK_STATUS_DATABASE_PATH)
 
+    ecoshards_used_in_scenarios = set(ALWAYS_FETCH_ECOSHARD_KEYS)
+    for scenario_ecoshard_keys in SCENARIOS.values():
+        ecoshards_used_in_scenarios.update(set(scenario_ecoshard_keys))
+
     task_graph = taskgraph.TaskGraph(
         WORKSPACE_DIR, args.n_workers)
     os.makedirs(ECOSHARD_DIR, exist_ok=True)
@@ -733,6 +738,11 @@ def main():
     LOGGER.info('scheduling downloads')
     LOGGER.debug('starting downloads')
     for ecoshard_id, ecoshard_url in ECOSHARDS.items():
+
+        # only fetch the ecoshards used by the scenario(s) we're doing.
+        if ecoshard_id not in ecoshards_used_in_scenarios:
+            continue
+
         ecoshard_basename = os.path.basename(ecoshard_url)
         cached_ecoshard_path = os.path.join(LOCAL_ECOSHARD_CACHE_DIR,
                                             ecoshard_basename)
