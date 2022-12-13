@@ -100,7 +100,7 @@ def _setup_logger(name, log_filename, level):
         logger object
     """
     handler = logging.FileHandler(os.path.join(WORKSPACE_DIR, log_filename))
-    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    formatter = logging.Formatter('%(asctime)s PID%(process)d %(levelname)s %(message)s')
     handler.setFormatter(formatter)
     logger = logging.getLogger(name)
     logger.setLevel(level)
