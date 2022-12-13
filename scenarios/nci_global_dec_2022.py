@@ -16,9 +16,6 @@ import sys
 
 # Log to stdout, including the date/time format to match the logs produced by
 # the pipeline.
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s PID%(process)d %(levelname)s %(message)s')
 BIOPHYSICAL_TABLE_IDS = {
     'nci-ndr-biophysical_table_forestry_grazing': 'ID', }
 ECOSHARD_PREFIX = 'https://storage.googleapis.com/'

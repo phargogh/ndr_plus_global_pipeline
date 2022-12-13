@@ -27,6 +27,9 @@ from osgeo import osr
 
 #gdal.SetCacheMax(1024)  # 1024 MB
 gdal.SetCacheMax(2**27)  # bytes, about 124 MB
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s PID%(process)d %(levelname)s %(message)s')
 logging.getLogger('taskgraph').setLevel(logging.INFO)
 
 # Using an ENV-defined workspace means we can run multiple individual scenarios
