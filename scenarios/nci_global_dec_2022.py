@@ -42,7 +42,11 @@ try:
     with open(os.environ['NCI_SCENARIO_LULC_N_APP_JSON']) as lulc_scenarios_json:
         loaded_json_data = json.load(lulc_scenarios_json)
         ECOSHARDS.update(loaded_json_data)
-        SCRUB_IDS.update(loaded_json_data.keys())  # Assume nothing is safe
+
+        # Assume n_app rasters need to be scrubbed, not the LULCs.
+        for key in loaded_json_data.keys():
+            if 'n_app' in key:
+                SCRUB_IDS.add(key)
 except KeyError:
     # Not necessarily an issue; we might be just listing out the scenarios in
     # order to define the jobs to run.
