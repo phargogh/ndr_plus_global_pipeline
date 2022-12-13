@@ -18,7 +18,7 @@ import sys
 # the pipeline.
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s %(levelname)s %(message)s')
+    format='%(asctime)s PID%(process)d %(levelname)s %(message)s')
 BIOPHYSICAL_TABLE_IDS = {
     'nci-ndr-biophysical_table_forestry_grazing': 'ID', }
 ECOSHARD_PREFIX = 'https://storage.googleapis.com/'
