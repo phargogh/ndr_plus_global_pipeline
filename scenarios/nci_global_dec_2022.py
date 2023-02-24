@@ -98,6 +98,30 @@ SCENARIOS = {
         'fertilizer_id': 'intensification_n_app',
         'biophysical_table_id': 'nci-ndr-biophysical_table_forestry_grazing',
     },
+    'intensification_optimized_bmp': {
+        'lulc_id': 'intensification_optimized_bmps_lulc',
+        'precip_id': 'worldclim_2015',
+        'fertilizer_id': 'intensification_optimized_bmps_n_app',
+        'biophysical_table_id': 'nci-ndr-biophysical_table_forestry_grazing',
+    },
+    'intensification_optimized_expansion_bmp': {
+        'lulc_id': 'intensification_optimized_expansion_bmps_lulc',
+        'precip_id': 'worldclim_2015',
+        'fertilizer_id': 'intensification_optimized_expansion_bmps_n_app',
+        'biophysical_table_id': 'nci-ndr-biophysical_table_forestry_grazing',
+    },
+    'intensification_optimized_expansion': {
+        'lulc_id': 'intensification_optimized_expansion_lulc',
+        'precip_id': 'worldclim_2015',
+        'fertilizer_id': 'intensification_optimized_expansion_n_app',
+        'biophysical_table_id': 'nci-ndr-biophysical_table_forestry_grazing',
+    },
+    'intensification_optimized': {
+        'lulc_id': 'intensification_optimized_lulc',
+        'precip_id': 'worldclim_2015',
+        'fertilizer_id': 'intensification_optimized_n_app',
+        'biophysical_table_id': 'nci-ndr-biophysical_table_forestry_grazing',
+    },
     'baseline': {
         'lulc_id': 'baseline_lulc',
         'precip_id': 'worldclim_2015',
