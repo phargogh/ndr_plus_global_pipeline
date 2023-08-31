@@ -27,8 +27,7 @@ ECOSHARDS = {
 
 # put IDs here that need to be scrubbed, you may know these a priori or you
 # may run the pipeline and see an error and realize you need to add them
-SCRUB_IDS = {
-}
+SCRUB_IDS = set()
 
 try:
     with open(os.environ['NCI_SCENARIO_LULC_N_APP_JSON']) as lulc_scenarios_json:
