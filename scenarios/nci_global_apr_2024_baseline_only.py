@@ -38,6 +38,7 @@ ECOSHARDS = {
 # TODO: fix the n application pipeline to not produce nans and others that must
 # be scrubbed.
 SCRUB_IDS = {
+    'baseline_fertilizer',
 }
 
 try:
