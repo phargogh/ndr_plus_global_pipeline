@@ -24,7 +24,13 @@ ECOSHARDS = {
     'nci-ndr-biophysical_table_forestry_grazing': f'{SHERLOCK_SCRATCH}/nci-ecoshards/nci-NDR-biophysical_table_forestry_grazing_md5_fbd7364c71c6fe45b45d1db428f05600.csv',
     'worldclim_2015': f'{SHERLOCK_SCRATCH}/nci-ecoshards/worldclim_2015_md5_16356b3770460a390de7e761a27dbfa1.tif',
     'baseline_lulc': f'{SHERLOCK_SCRATCH}/nci-ecoshards/modifiedESA_2022_06_03_md5_7dc8402ad44251e8021f4a72559e5f32.tif',
-    'baseline_fertilizer': f'{SHERLOCK_SCRATCH}/nci-ecoshards/AppliedNperharvestedha2015_Gerberetal_Scaledto2015_ConstNUE_CropGridsArea.tif',
+
+    # This is the N applied per pixel, which is calculated by multiplying the 2
+    # rasters Jamie sent:
+    #    AppliedNperharvestedha2015_Gerberetal_Scaledto2015_ConstNUE_CropGridsArea.tif
+    #    multiplied by
+    #    Harvestedha_WithNapplication2015_Gerberetal_Scaledto2015_ConstNUE_CropGridsArea.tif
+    'baseline_fertilizer': f'{SHERLOCK_SCRATCH}/nci-ecoshards/AppliedNPerPixel2015_Gerberetal.tif',
 }
 
 # put IDs here that need to be scrubbed, you may know these a priori or you
@@ -32,7 +38,6 @@ ECOSHARDS = {
 # TODO: fix the n application pipeline to not produce nans and others that must
 # be scrubbed.
 SCRUB_IDS = {
-    'baseline_fertilizer',
 }
 
 try:
